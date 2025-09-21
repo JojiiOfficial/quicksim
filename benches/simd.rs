@@ -12,7 +12,7 @@ const U32_ARRAY_LEN_TO_CHECK: [usize; 8] = [16, 32, 64, 150, 530, 1028, 5010, 80
 fn find_u32(c: &mut Criterion) {
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("find");
+    let mut g = c.benchmark_group("find_u32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let needle = rng.next_u32();
@@ -63,7 +63,7 @@ fn find_u32(c: &mut Criterion) {
 fn count_u32(c: &mut Criterion) {
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("count");
+    let mut g = c.benchmark_group("count_u32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let data: Vec<_> = (0..size).map(|_| rng.next_u32()).collect();
@@ -86,7 +86,7 @@ fn count_u32(c: &mut Criterion) {
 fn min_max_u32(c: &mut Criterion) {
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("min");
+    let mut g = c.benchmark_group("min_u32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let data: Vec<_> = (0..size).map(|_| rng.next_u32()).collect();
@@ -108,7 +108,7 @@ fn min_max_u32(c: &mut Criterion) {
 
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("max");
+    let mut g = c.benchmark_group("max_u32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let data: Vec<_> = (0..size).map(|_| rng.next_u32()).collect();
@@ -130,7 +130,7 @@ fn min_max_u32(c: &mut Criterion) {
 fn min_max_f32(c: &mut Criterion) {
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("min-f32");
+    let mut g = c.benchmark_group("min_f32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let data: Vec<_> = (0..size).map(|_| rng.next_u32() as f32).collect();
@@ -152,7 +152,7 @@ fn min_max_f32(c: &mut Criterion) {
 
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("max-f32");
+    let mut g = c.benchmark_group("max_f32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let data: Vec<_> = (0..size).map(|_| rng.next_u32() as f32).collect();
@@ -174,7 +174,7 @@ fn min_max_f32(c: &mut Criterion) {
 fn contains_u32(c: &mut Criterion) {
     let mut rng = StdRng::seed_from_u64(42);
 
-    let mut g = c.benchmark_group("contains");
+    let mut g = c.benchmark_group("contains_u32");
 
     for size in U32_ARRAY_LEN_TO_CHECK {
         let needle = rng.next_u32();

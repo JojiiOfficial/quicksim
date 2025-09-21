@@ -4,7 +4,17 @@ pub(crate) fn find_iter_u32(array: &[u32], needle: u32) -> Option<usize> {
 }
 
 #[inline]
+pub(crate) fn find_iter_u8(array: &[u8], needle: u8) -> Option<usize> {
+    array.iter().position(|i| *i == needle)
+}
+
+#[inline]
 pub(crate) fn contains_iter_u32(array: &[u32], needle: u32) -> bool {
+    array.iter().any(|i| *i == needle)
+}
+
+#[inline]
+pub(crate) fn contains_iter_u8(array: &[u8], needle: u8) -> bool {
     array.iter().any(|i| *i == needle)
 }
 
@@ -14,12 +24,22 @@ pub(crate) fn count_iter_u32(array: &[u32], needle: u32) -> usize {
 }
 
 #[inline]
+pub(crate) fn min_iter_u8(array: &[u8]) -> Option<u8> {
+    array.iter().min().copied()
+}
+
+#[inline]
 pub(crate) fn min_iter_u32(array: &[u32]) -> Option<u32> {
     array.iter().min().copied()
 }
 
 #[inline]
 pub(crate) fn max_iter_u32(array: &[u32]) -> Option<u32> {
+    array.iter().max().copied()
+}
+
+#[inline]
+pub(crate) fn max_iter_u8(array: &[u8]) -> Option<u8> {
     array.iter().max().copied()
 }
 

@@ -1,8 +1,11 @@
-use std::arch::x86_64::{
-    __m256, __m256i, _mm_add_epi32, _mm_extract_epi32, _mm_extract_ps, _mm_hadd_epi32,
-    _mm_max_epu32, _mm_max_ps, _mm_min_epu32, _mm_min_ps, _mm_shuffle_epi32, _mm_shuffle_ps,
-    _mm256_castps256_ps128, _mm256_castsi256_si128, _mm256_extractf128_ps,
-    _mm256_extracti128_si256,
+use std::{
+    arch::x86_64::{
+        __m256, __m256i, _mm_add_epi32, _mm_extract_epi32, _mm_extract_ps, _mm_hadd_epi32,
+        _mm_max_epu8, _mm_max_epu32, _mm_max_ps, _mm_min_epu8, _mm_min_epu32, _mm_min_ps,
+        _mm_shuffle_epi32, _mm_shuffle_ps, _mm256_castps256_ps128, _mm256_castsi256_si128,
+        _mm256_extractf128_ps, _mm256_extracti128_si256,
+    },
+    mem::transmute,
 };
 
 /// Calculates the horizontal sum of 8x 32bit integers.
@@ -26,6 +29,32 @@ pub fn horizontal_sum_u32_avx(input: __m256i) -> u32 {
     );
     let hsum = _mm_hadd_epi32(sum128, sum128);
     _mm_extract_epi32::<0>(hsum) as u32 + _mm_extract_epi32::<1>(hsum) as u32
+}
+
+/// Calculates the horizontal maximum of 32x u8.
+#[target_feature(enable = "avx")]
+#[target_feature(enable = "avx2")]
+pub fn horizontal_max_u8_avx(a: __m256i) -> u8 {
+    let min128 = _mm_max_epu8(_mm256_castsi256_si128(a), _mm256_extracti128_si256::<1>(a));
+
+    // Safety: we can safely transmute a __m128i to [u8; 16]
+    let array: [u8; 16] = unsafe { transmute(min128) };
+
+    // Safety: `array` is always of length 16.
+    unsafe { *array.iter().max().unwrap_unchecked() }
+}
+
+/// Calculates the horizontal minimum of 32x u8.
+#[target_feature(enable = "avx")]
+#[target_feature(enable = "avx2")]
+pub fn horizontal_min_u8_avx(a: __m256i) -> u8 {
+    let min128 = _mm_min_epu8(_mm256_castsi256_si128(a), _mm256_extracti128_si256::<1>(a));
+
+    // Safety: we can safely transmute a __m128i to [u8; 16]
+    let array: [u8; 16] = unsafe { transmute(min128) };
+
+    // Safety: `array` is always of length 16.
+    unsafe { *array.iter().min().unwrap_unchecked() }
 }
 
 /// Calculates the horizontal minimum of 8x u32.

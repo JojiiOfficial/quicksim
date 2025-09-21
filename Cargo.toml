@@ -21,3 +21,7 @@ ordered-float = "5.0.0"
 [[bench]]
 name = "simd"
 harness = false
+
+[[bench]]
+name = "u8_impl"
+harness = false
