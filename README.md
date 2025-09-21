@@ -1,3 +1,5 @@
+![Crates.io Version](https://img.shields.io/crates/v/quicksim)
+
 # Quicksim
 Quick-sim(d) provides several <b>SIMD-accelerated, drop-in replacements</b> for common algorithms.<br>
 It's designed to make speeding up trivial parts of your code as easy as possible - <b>no manual SIMD programming required</b>.
