@@ -1,6 +1,9 @@
-![Crates.io Version](https://img.shields.io/crates/v/quicksim)
-
 # Quicksim
+<p align="center">
+<a href="https://crates.io/crates/quicksim"><img alt="Static Badge" src="https://img.shields.io/crates/v/quicksim"></a>
+<a href="https://docs.rs/quicksim/0.1.0/quicksim/"><img alt="Static Badge" src="https://img.shields.io/docsrs/quicksim"></a>    
+</p>
+<br>
 Quick-sim(d) provides several <b>SIMD-accelerated, drop-in replacements</b> for common algorithms.<br>
 It's designed to make speeding up trivial parts of your code as easy as possible - <b>no manual SIMD programming required</b>.
 AVX features are <b>automatically detected at runtime</b> and enabled whenever possible. <br>
