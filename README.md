@@ -56,6 +56,10 @@ Please note that the benchmark results <b>may contain some noise</b>, so they sh
 All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</b>.
 
 ## &[u32]
+
+<table>
+<tr><td>
+    
 ### 🔍 Find - avg
 |    |   size |     simd |     iter |   speedup |
 |----|--------|----------|----------|-----------|
@@ -68,6 +72,8 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  6 |   5010 |  85.771  | 595.31   |  6.94069  |
 |  7 |   8000 | 132.41   | 948.74   |  7.16517  |
 
+</td><td>
+    
 ### 🔍 Find - worst
 |    |   size |     simd |      iter |   speedup |
 |----|--------|----------|-----------|-----------|
@@ -79,6 +85,8 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  5 |   1028 |  36.596  |  245.98   |  6.7215   |
 |  6 |   5010 | 153.56   | 1178.3    |  7.67322  |
 |  7 |   8000 | 243.77   | 1880.8    |  7.71547  |
+
+</td></tr> </table>
 
 ### Count
 |    |   size |     simd |      iter |   speedup |
@@ -92,6 +100,9 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  6 |   5010 |  83.04   |  658.32   |   7.92775 |
 |  7 |   8000 | 126.9    | 1061.6    |   8.36564 |
 
+<table>
+<tr><td>
+    
 ### Min
 |    |   size |     simd |      iter |   speedup |
 |----|--------|----------|-----------|----------|
@@ -103,6 +114,8 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  5 |   1028 |  18.393  |  270.9    | 14.7284   |
 |  6 |   5010 |  80.394  | 1195.6    | 14.8718   |
 |  7 |   8000 | 126.19   | 1885.2    | 14.9394   |
+
+</td><td>
 
 ### Max
 |    |   size |     simd |      iter |   speedup |
@@ -116,6 +129,11 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  6 |   5010 |  80.861  | 2337      | 28.9014   |
 |  7 |   8000 | 126.19   | 3734      | 29.5903   |
 
+</td></tr> </table>
+
+<table>
+<tr><td>
+
 ### Contains - avg
 |    |   size |     simd |     iter |   speedup |
 |----|--------|----------|----------|-----------|
@@ -127,6 +145,8 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  5 |   1028 |  17.607  | 127.71   |  7.25337  |
 |  6 |   5010 |  88.245  | 590.65   |  6.6933   |
 |  7 |   8000 | 129.19   | 941.28   |  7.28601  |
+
+</td><td>
 
 ### Contains - worst
 |    |   size |     simd |      iter |   speedup |
@@ -140,7 +160,13 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  6 |   5010 | 154.94   | 1192.1    |   7.69395 |
 |  7 |   8000 | 245.39   | 1874.9    |   7.64049 |
 
+</td></tr> </table>
+
 ## &[f32]
+
+<table>
+<tr><td>
+
 ### Min
 |    |   size |     simd |      iter |   speedup |
 |----|--------|----------|-----------|-----------|
@@ -153,6 +179,8 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  6 |   5010 |  79.785  | 1177.4    | 14.7572   |
 |  7 |   8000 | 128.59   | 1859.9    | 14.4638   |
 
+</td><td>
+
 ### Max
 |    |   size |     simd |      iter |   speedup |
 |----|--------|----------|-----------|-----------|
@@ -164,3 +192,6 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  5 |   1028 |  25.172  |  234.02   |  9.29684  |
 |  6 |   5010 | 120.41   | 1157.3    |  9.61133  |
 |  7 |   8000 | 190.97   | 1861.4    |  9.74708  |
+
+</td></tr> </table>
+
