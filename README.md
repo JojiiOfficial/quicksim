@@ -1,18 +1,23 @@
 # Quicksim
 <p align="center">
-<a href="https://crates.io/crates/quicksim"><img alt="Static Badge" src="https://img.shields.io/crates/v/quicksim"></a>
-<a href="https://docs.rs/quicksim/0.1.0/quicksim/"><img alt="Static Badge" src="https://img.shields.io/docsrs/quicksim"></a>    
+    <a href="https://crates.io/crates/quicksim"><img alt="Static Badge" src="https://img.shields.io/crates/v/quicksim"></a>
+    <a href="https://docs.rs/quicksim/0.1.0/quicksim/"><img alt="Static Badge" src="https://img.shields.io/docsrs/quicksim"></a>    
 </p>
 <br>
+
 Quick-sim(d) provides several <b>SIMD-accelerated, drop-in replacements</b> for common algorithms.<br>
-It's designed to make speeding up trivial parts of your code as easy as possible - <b>no manual SIMD programming required</b>.
+It's designed to make speeding up trivial parts of your code as easy as possible - <b>no manual SIMD programming required</b>.<br>
 AVX features are <b>automatically detected at runtime</b> and enabled whenever possible. <br>
-Quick-sim(d) is not intended as a replacement for [Portable SIMD](https://github.com/rust-lang/portable-simd). Instead, it aims to <b>completely hide vectorization logic</b> from the API, keeping usage simple and ergonomic. <br>
+<br>
+Quick-sim(d) is not intended as a replacement for [Portable SIMD](https://github.com/rust-lang/portable-simd/). Instead, it aims to <b>completely hide vectorization logic</b> from the API, keeping usage simple and ergonomic. <br>
 The project is currently in <b>alpha state</b>, and does <b>not yet provide vectorized implementations</b> for all vectorizable functions in the Rust standard library. <br>
 <br>
 The implementations in this crate generally achieve significant speedups compared to naive versions. However, there are some trade-offs. For more information, see the [Limitations](#Limitations) section.
+<br><br>
 
-`Note: Iterators are usually fast enough for most cases. Use this crate carefully, and make sure to identify critical hot-paths before replacing all of your implementations with the accelerated functions provided by this crate.`
+```
+Note: Iterators are usually fast enough for most cases. Use this crate carefully, and make sure to identify critical hot-paths before replacing all of your implementations with the accelerated functions provided by this crate.
+```
 
 # Add to your project
 
