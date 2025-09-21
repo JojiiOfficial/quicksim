@@ -88,6 +88,9 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 
 </td></tr> </table>
 
+<table>
+<tr><td>
+
 ### Count
 |    |   size |     simd |      iter |   speedup |
 |----|-------|----------|-----------|-----------|
@@ -99,6 +102,7 @@ All measurements were taken on a <b>Ryzen 5 5600x</b> CPU with <b>32 GB of RAM</
 |  5 |   1028 |  18.706  |  137.6    |   7.35593 |
 |  6 |   5010 |  83.04   |  658.32   |   7.92775 |
 |  7 |   8000 | 126.9    | 1061.6    |   8.36564 |
+</td></tr> </table>
 
 <table>
 <tr><td>
